@@ -3,58 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Clima - HTML</title>
+  <title>Clima Mundial</title>
   <style>
     :root {
-      --bg: #f6f7f9;
+      --bg: #f0f9ff;
       --card: #ffffff;
       --text: #1f2937;
       --muted: #6b7280;
+      --primary: #2563eb;
     }
     html, body { height: 100%; }
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1200px 800px at 20% 10%, #eef2ff 0%, #f8fafc 35%, var(--bg) 100%);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial;
+      background: linear-gradient(to bottom right, #93c5fd, #e0f2fe);
       color: var(--text);
       display: grid;
       place-items: center;
-    }
-    .card {
-      background: var(--card);
-      padding: 2.5rem 2.25rem;
-      border-radius: 1.25rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.05);
-      text-align: center;
-      max-width: 560px;
-      width: min(92vw, 560px);
+      padding: 2rem;
     }
     h1 {
       font-size: clamp(2rem, 4.5vw, 2.75rem);
-      margin: 0 0 0.5rem;
-      letter-spacing: 0.5px;
+      margin: 0 0 1rem;
+      color: var(--primary);
+      text-align: center;
     }
-    p {
-      margin: 0;
-      font-size: 1rem;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1200px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 1.25rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+    .temp {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+    .country {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .desc {
       color: var(--muted);
-    }
-    .tag {
-      margin-top: 1rem;
-      display: inline-block;
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      background: #eef2ff;
-      font-size: 0.85rem;
-      color: #4338ca;
+      font-size: 0.95rem;
     }
   </style>
 </head>
 <body>
-  <main class="card" role="main" aria-labelledby="titulo">
-    <h1 id="titulo">Clima (HTML)</h1>
-    <p>Esta es una página sencilla que solo dice <strong>"clima html"</strong>.</p>
-    <span class="tag" aria-hidden="true">Demo simple</span>
+  <main>
+    <h1>Pronóstico del Clima en el Mundo</h1>
+    <section class="grid">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1163/1163661.png" alt="Clima México" />
+        <div class="country">México</div>
+        <div class="temp">27°C</div>
+        <div class="desc">Soleado</div>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1163/1163624.png" alt="Clima España" />
+        <div class="country">España</div>
+        <div class="temp">22°C</div>
+        <div class="desc">Parcialmente nublado</div>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1163/1163657.png" alt="Clima Estados Unidos" />
+        <div class="country">Estados Unidos</div>
+        <div class="temp">19°C</div>
+        <div class="desc">Lluvia ligera</div>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1163/1163654.png" alt="Clima Japón" />
+        <div class="country">Japón</div>
+        <div class="temp">30°C</div>
+        <div class="desc">Soleado con nubes</div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
+
